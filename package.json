@@ -1,0 +1,74 @@
+{
+  "name": "naturerepublic",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./build/electron.js",
+  "homepage": "./",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "electronstart": "wait-on http://localhost:3000 && SET ELECTRON_START_URL=http://localhost:3000 && electron .",
+    "reactstart": "react-scripts start",
+    "reactbuild": "react-scripts build",
+    "electronbuild64":"electron-builder --x64",
+    "electronbuild32":"electron-builder --ia32"
+  },
+  "build": {
+    "productName": "NatureRepublic",
+    "appId": "com.minicastle.NatureRepublic",
+    "asar": true,
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icons/icon.icns"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "perMachine": true,
+      "language": 1042,
+      "shortcutName": "NatureRepublic",
+      "artifactName": "NatureRepublic64.${ext}",
+      "uninstallDisplayName": "NatureRepublic"
+    },
+    "directories": {
+      "buildResources": "./build/",
+      "output": "./dist/"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^15.3.0",
+    "electron-builder": "^22.13.1",
+    "framer-motion": "^4.1.17",
+    "react": "^17.0.2",
+    "wait-on": "^6.0.0",
+    "xlsx": "^0.17.3",
+    "xlsx-style": "^0.8.13"
+  }
+}
