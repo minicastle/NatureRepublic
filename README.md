@@ -7,8 +7,9 @@
 그안에서 필요한 품목의 수량과 실수량을 대조할수 있는 Xlsx파일을 만들어 제고정리에 조금이라도 도움이 되었으면 하는 마음에 만들게 되었습니다.
 
 ---
-## 2. 추출방법 & 다운로드 방법
+## 2. 추출방법 & 사용 방법
 ---
+추출방법
 1. git clone https://github.com/minicastle/NatureRepublic.git  [DIR]
     - Git Hub에서 파일을 다운받는다.
 2. npm install & npm run build
@@ -17,14 +18,24 @@
     - 파일을 설치할 컴퓨터가 64비트라면 electronbuild64 32비트라면 electronbuild32를 입력한다.
 4. dist 경로에 위치한 NatureRepublic [version] .exe 파일을 설치한다.
 
+사용방법
+ - ./Test 폴더에 있는 원본데이터.xls 파일과 품목표.txt 파일을 다운로드 받고 <br> Nature Republic 사용법.txt
+ 내부의 방법을 따라서 실행해보시면 사용법을 알수 있습니다.<br>
+ ./Test 파일의 complete(1).xlsx는 결과 파일입니다.
+
+
 ---
 ## 3. 개발과정
 ---
 >## 1. CRA(Create React App)을 이용하여 React 환경구축
-> -  간단한 Clone Coding 프로젝트 이기 때문에 CRA를 통해 개발환경을 구축하였습니다.
->> CRA는 사용하지 않는 기능들도 들어가기 때문에 최적화에는 용이하지 않은 방법이지만 간단한 Clone 프로젝트 이기 때문에 개발환경을 자동으로 설정해주는 CRA를 사용하였습니다.
+> -  간단한 Original Project 이기 때문에 CRA를 통해 개발환경을 구축하였습니다.
+>> CRA는 사용하지 않는 기능들도 들어가기 때문에 최적화에는 용이하지 않은 방법이지만 간단한 Original Project 이기 때문에 개발환경을 자동으로 설정해주는 CRA를 사용하였습니다.
 >## 2. ElctronJS를 이용한 Desctop App 환경구축
 > - ElectronJS는 기존의 web site를 개발하는 방법과 동일하게 개발한후 이를 Desctop App으로 변환해주는 라이브러리 입니다. 
+>## 3. Framer Motion을 이용한 UI
+> - MUI와 Component style같은 스타일 방식들을 한창 테스트 해볼생각에 많은 시도를 했던 시기 인것 같습니다. 지금은 Component style로 굳혀졌지만 Framer Motion도 나름 호평을 받았었기 때문에 UI제작시 시도해 보았습니다.
+>## 4. Xlsx를 이용해 데이터의 Read & Write 구현
+> - Xlsx 라이브러리를 통해 xlsx 파일을 받아올때 내부의 데이터를 Object in Array 형태로 State에 저장하고 txt파일로부터 코드를 받아와 필요한 부분만 추출한 파일을 다운로드 할수 있도록 제작하였습니다.
 ---
 ## 4. 개발이후 생각한 사이트 개선점 & 배운점
 ---
@@ -32,8 +43,9 @@
 > 1. UI개선 및 사용법 개선
 > - 친분이 있는 분을 위해 제작 하다보니 사용 가능할 정도만 부탁한다고 받았기에 UI 및 사용법에서 부족한 부분이 많이 있습니다. Drag & Drop방식을 입혀 사용한다거나 혹은 Database 형태로 변형해 Xlsx형태로 변환하는게 아닌 보고서 페이지 형태로 변환해서 redux를 이용해 데이터를 저장해 두었다면 조금더 사용성이 좋아지지 않았을까 생각합니다.
 ## 배운점
-> 1. Pizzicato
-> - WebApi의 종류가 많다보니 WebAudioApi를 직접적으로 적용해본 프로젝트가 없어 사용방법을 찾고있었는데 Pizzicato를 이용할수 있겠다고 생각하여 mic응용 프로젝트를 다음에도 하게 된다면 활용할때 좋을것 같다고 생각하였습니다.
+> 1. Xlsx 라이브러리 사용법
+> -  일반적으로 사용할 일이 없던 라이브러리 였지만 Desctop App을 만들때 도움이 될만한 라이브러리를 배웠다고 생각합니다. <br>
+Xlsx를 읽어와 배열 혹은 JSON형태로 변형한다면 이후에 데이터베이스로 변환해 서버에 업로드 한다거나 혹은 업무용 Desctop App을 만들어 사용할때 분명 도움이 될것 이라고 생각합니다.
 ---
 ### ◤ 정성민의 다른 프로젝트 ◢
 | Project Name              | Source Code           | Original Site             |
